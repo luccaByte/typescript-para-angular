@@ -21,3 +21,23 @@ let indefinido: undefined = undefined;
 // any / void
 let retorno: void 
 let retornoView: any 
+
+// objeto - sem previsibilidade
+let produto: object = {
+    name: "Lucas",
+    cidade: "Caraguá",
+    idade: 23
+};
+
+// objeto ttipado - com previsibilidade
+type Produtoloja = {
+    nome: string;
+    preco: number;
+    unidades: number;
+}
+
+let meuProduto: Produtoloja = {
+    nome: "tênis",
+    preco: 89.99,
+    unidades: 5
+}
