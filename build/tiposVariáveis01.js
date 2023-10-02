@@ -15,3 +15,14 @@ let indefinido = undefined;
 // any / void
 let retorno;
 let retornoView;
+// objeto - sem previsibilidade
+let produto = {
+    name: "Lucas",
+    cidade: "Caraguá",
+    idade: 23
+};
+let meuProduto = {
+    nome: "tênis",
+    preco: 89.99,
+    unidades: 5
+};
