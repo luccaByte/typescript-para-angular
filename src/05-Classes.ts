@@ -8,20 +8,33 @@
 */
 
 class character {
-    private name?: string; // "?"" transforma a expressão como expressão opcional
+    protected name?: string; // "?"" transforma a expressão como expressão opcional
     stregth: number;
     skill: number;
 
     constructor (name: string, stregth: number, skill: number){
-        this.name = name; // como o name está private, só é possível acessar ela dentro da classe, ou seja, pelo constructor
+        this.name = name; 
         this.stregth = stregth;
         this.skill = skill;
     }
 
     attack (): void {
-        console.log(`Attack with ${this.stregth} points`)
+        console.log(`Attack with ${this.stregth} points`);
+    }
+}
+
+// character: super classe ou classe pai
+// Magician: Sub classe ou  classe filha
+class Magician extends character {
+    magicPoints: number;
+
+    constructor(name: string, stregth: number, skill: number, magicPoints: number) {
+        super(name, stregth, skill); // o método super deve estar passando primeiro que o this.
+        this.magicPoints = magicPoints;
     }
 }
 
 const p1 = new character ("Ryu", 10, 98); // "Ryu" não será passado pois a expressão name está como private
 p1.attack(); // como "attack" já está passando um console.log, não precisa passar de novo fora da estrutura
+
+const p2 = new Magician ("Mago", 89, 30, 100);

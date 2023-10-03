@@ -8,7 +8,7 @@
 */
 class character {
     constructor(name, stregth, skill) {
-        this.name = name; // como o name está private, só é possível acessar ela dentro da classe, ou seja, pelo constructor
+        this.name = name;
         this.stregth = stregth;
         this.skill = skill;
     }
@@ -16,5 +16,14 @@ class character {
         console.log(`Attack with ${this.stregth} points`);
     }
 }
+// character: super classe ou classe pai
+// Magician: Sub classe ou  classe filha
+class Magician extends character {
+    constructor(name, stregth, skill, magicPoints) {
+        super(name, stregth, skill); // o método super deve estar passando primeiro que o this.
+        this.magicPoints = magicPoints;
+    }
+}
 const p1 = new character("Ryu", 10, 98); // "Ryu" não será passado pois a expressão name está como private
 p1.attack(); // como "attack" já está passando um console.log, não precisa passar de novo fora da estrutura
+const p2 = new Magician("Mago", 89, 30, 100);
